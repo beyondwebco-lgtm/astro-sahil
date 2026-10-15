@@ -295,3 +295,52 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold-dark);
 }
+
+/* Sacred Celestial Chakra Slow Rotation */
+@keyframes chakraRotateSlow {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.chakra-rotating-bg {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  width: 960px;
+  height: 960px;
+  max-width: 140vw;
+  max-height: 140vw;
+  transform: translate(-50%, -50%);
+  background-image: url('/celestial-hero.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  opacity: 0.36;
+  filter: contrast(120%) saturate(105%) brightness(1.05);
+  animation: chakraRotateSlow 90s linear infinite;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 32%, rgba(0, 0, 0, 0.75) 52%, transparent 72%);
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 32%, rgba(0, 0, 0, 0.75) 52%, transparent 72%);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chakra-rotating-bg {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .chakra-rotating-bg {
+    top: 34%;
+    width: 640px;
+    height: 640px;
+    opacity: 0.32;
+  }
+}
+

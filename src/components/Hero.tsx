@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         background: 'var(--bg-deep)',
       }}
     >
-      {/* Background Celestial & Sacred Yantra Image with Opacity & Gradient Overlay */}
+      {/* Ambient Celestial Backdrop (static faint cosmos) */}
       <div
         style={{
           position: 'absolute',
@@ -35,14 +35,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           right: 0,
           bottom: 0,
           backgroundImage: `url('/celestial-hero.jpg')`,
-          backgroundPosition: 'center 35%',
+          backgroundPosition: 'center center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-          opacity: 0.28,
-          filter: 'contrast(115%) saturate(90%)',
+          opacity: 0.12,
+          filter: 'blur(2px) contrast(110%)',
           pointerEvents: 'none',
         }}
       />
+
+      {/* Rotating Sacred Sri Yantra / Chakra */}
+      <div className="chakra-rotating-bg" aria-hidden="true" />
 
       {/* Atmospheric Overlays for Depth and Contrast */}
       <div
